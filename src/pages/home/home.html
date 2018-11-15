@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>INFORMACION</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  
+
+  <ion-card>
+      <ion-card-header>
+       VENTAS
+      </ion-card-header>
+      <ion-card-content>
+          <label>VENTAS TOTALES: Q{{totalVenta}}</label><br>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+        <ion-card-header>
+         COMISIONES
+        </ion-card-header>
+        <ion-card-content>
+            
+      <label>COMISIONES TOTALES: Q{{totalComision}}</label>
+        </ion-card-content>
+      </ion-card>
+
+
+
+  <button ion-button hidden full icon-left (click)="startTracking()" *ngIf="!isTracking">
+    <ion-icon name="locate"></ion-icon>
+    Start Tracking
+  </button>
+<button ion-button hidden full color="danger" icon-left (click)="stopTracking()" *ngIf="isTracking">
+    <ion-icon name="hand"></ion-icon>
+    Stop Tracking
+</button>
+
+<div #map hidden id="map"></div>
+
+
+
+</ion-content>

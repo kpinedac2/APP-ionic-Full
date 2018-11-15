@@ -1,0 +1,50 @@
+<!--
+  Generated template for the SolicitudCrearPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Nueva solicitud</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <form [formGroup]="formulario" action="">
+
+    <ion-list>
+      <ion-input type="hidden" value="false" formControlName="solicitudEstado"></ion-input>
+      <ion-input type="hidden" value="{{usuarioId}}" formControlName="usuario_id"></ion-input>
+      
+      <ion-item>
+        <ion-label floating>Tipo de solicitud</ion-label>
+        <ion-select value="" formControlName="tipo_solicitud_id">
+          <ion-option *ngFor="let t of tiposSolicitud" value="{{t.id}}">
+            {{t.solicitudTipo}}
+          </ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Fecha que solicita</ion-label>
+        <ion-input type="text" value="" formControlName="solicitudFecha"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Número de horas</ion-label>
+        <ion-input type="number" value="" formControlName="horasPermiso"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Motivo de la solicitud</ion-label>
+        <ion-input type="text" value="" formControlName="solicitudDescripcion"></ion-input>
+      </ion-item>
+
+      <button (click)="guardarCliente()" ion-button block color="primary">Enviar</button>
+    </ion-list>
+  </form>
+</ion-content>

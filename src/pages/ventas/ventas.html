@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Ventas</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <form [formGroup]="formulario">
+
+
+    <ion-list id="contenedor">
+
+        
+
+        <ion-input type="hidden" value="0" formControlName="ventaTotal"></ion-input>
+        <ion-input type="hidden" value="{{usarioId}}" formControlName="usuario_id"></ion-input>
+
+      <ion-item>
+        <ion-label floating>Tipo de venta</ion-label>
+        <ion-select value="" formControlName="venta_tipo_id">
+          <ion-option *ngFor="let t of ventaTipos" value="{{t.id}}">
+            {{t.tipoVenta}}
+          </ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Cliente</ion-label>
+        <ion-select value="" formControlName="cliente_id">
+          <ion-option *ngFor="let c of clientes" value="{{c.id}}">
+            {{c.clienteNombres}} {{c.clienteApellidos}}
+          </ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <button ion-button color="primary" full (click)='crearVenta()' (click)='crearCredito()'>Agregar</button>
+      </ion-item>
+
+      <ion-item>
+        <button ion-button color="primary" full  (click)='irHome()'>Cancelar</button>
+      </ion-item>
+
+    </ion-list>
+  </form>
+
+  <!-- <ngx-datatable class="fullscreen" value ="id"  [ngClass]="tablestyle" [rows]="productos" [columnMode]="'force'" [sortType]="multi" [reorderable]="false">
+ 
+    <ngx-datatable-column name="productoNombre"></ngx-datatable-column>
+    <ngx-datatable-column name="precioVenta"></ngx-datatable-column>
+    <ngx-datatable-column name="disponibles"></ngx-datatable-column>
+    <ngx-datatable-column name="Vender" ion-checkbox color="dark" checked="true">
+
+            <ion-checkbox color="dark" checked="true"></ion-checkbox>
+
+    </ngx-datatable-column>
+    
+
+  </ngx-datatable> -->
+</ion-content>

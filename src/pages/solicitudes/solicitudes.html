@@ -1,0 +1,35 @@
+<!--
+  Generated template for the SolicitudesPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>SOLICITUDES</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <button ion-button color="primary" full (click)="crearSolicitud()"> Nueva Solicitud</button>
+  <button ion-button color="primary"  full>Lista de Solicitudes</button>
+
+  <ion-card *ngFor="let s of solicitudes; let i = index">
+    <ion-card-header>
+      <h2><i> <b>SOLICITUDES</b></i></h2>
+    </ion-card-header>
+    <ion-card-content>
+      <label for=""><b>Solicitud: </b> {{s.tipoSolicitudId.solicitudTipo}}</label> <br>
+      <label for=""><b>Fecha solicitud: </b> {{s.createdAt | date:'mediumDate'}}</label> <br>
+      <label for=""><b>Fecha solicitada: </b> {{s.solicitudFecha | date:'mediumDate'}}</label> <br>
+      <label for=""><b>Descripción: </b> {{s.solicitudDescripcion}}</label> <br>
+      <label for=""><b>Horas solicitadas: </b> {{s.horasPermiso}}</label> <br>
+      <label for=""><b>Estado de la solicitud: </b> {{s.solicitudEstado}}</label> <br>
+
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

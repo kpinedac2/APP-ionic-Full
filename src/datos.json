@@ -1,0 +1,59 @@
+
+[
+
+    {
+
+        "nombres": "Juan",
+        "apellidos": "Zúñiga",
+        "edad": 27,
+        "sexo": "Masculino",
+        "telefono": "8854255",
+        "direccion": "Asunción Mita Jutiapa",
+        "sueldo": 6000
+
+},
+
+{
+
+	"alerta": 2,
+    "disponibles": 50,
+    "precioCompra": 10,
+    "precioVenta": 15,
+    "productoCodigo": "A0825",
+    "productoNombre": "Pan Blanco",
+    "vencimiento": "2018-10-22T06:52:21.953+0000",
+    "categoriaId": 1,
+    "marcaId": 1,
+    "proveedorId": 1
+},
+
+{
+    
+	"clienteApellidos": "Alvarado Cabrera",
+    "clienteDeuda": 0,
+    "clienteDireccion": "Atescatempa",
+    "clienteNit": "7322551",
+    "clienteNombres": "Emanuel García",
+    "clienteSexo": "Masculino",
+    "clienteTelefono": "55885412"
+},
+
+{
+
+	"ventaTotal": 30,
+    "ventaTipoId": 2,
+    "usuarioId": 1,
+    "clienteId": 1
+},
+{
+
+	"horasPermiso": "24",
+    "solicitudDescripcion": "Estaré en una cita del igss",
+    "solicitudEstado": 0,
+    "solicitudFecha": "2018-10-22T06:52:21.953+0000",
+    "tipoSolicitudId": 1,
+    "usuarioId": 1
+}
+
+
+]

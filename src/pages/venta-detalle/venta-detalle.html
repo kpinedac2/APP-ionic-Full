@@ -1,0 +1,61 @@
+<!--
+  Generated template for the VentaDetallePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Elegir productos</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <form [formGroup]="formulario">
+
+
+    <ion-list id="contenedor">
+
+      <ion-item>
+        <ion-label floating>Producto</ion-label>
+        <ion-select id="idProducto" formControlName="producto_id" [(ngModel)]="idProducto">
+          <ion-option *ngFor="let p of productos" value="{{p.id}}" (ionSelect)="verProducto($event)">
+            {{p.productoNombre}} Q{{p.precioVenta}}.00
+          </ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-input id="precio" type="hidden" disabled="true" value="{{precio}}" formControlName="precioProducto">{{precio}}</ion-input>
+
+      <ion-item>
+        <ion-label floating>Cantidad</ion-label>
+        <ion-input type="number" value="" formControlName="cantidadVendida"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Subtotal</ion-label>
+        <ion-input type="number" value="{{subtotal}}" disabled="true" formControlName="subtotal">{{subtotal}}</ion-input>
+      </ion-item>
+
+      <ion-input type="hidden" value="0" formControlName="producto_id"></ion-input>
+
+      <!--  <ion-input type="hidden" value="{{ventaNueva}}" formControlName="ventaTotal"></ion-input>
+ -->
+      <ion-input type="hidden" value="{{idVenta}}" formControlName="venta_id"></ion-input>
+
+      <ion-item>
+        <button ion-button color="primary" ion-button block color="primary" (click)='calcular()'>Calcular</button>
+        <button ion-button color="primary" ion-button block color="primary" (click)='crearVenta()'>Vender</button>
+        <button ion-button color="primary" ion-button block color="primary"  (click)='verDetalles()'>Finalizar venta</button>
+      </ion-item>
+
+    </ion-list>
+  </form>
+
+</ion-content>
